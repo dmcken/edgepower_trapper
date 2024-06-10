@@ -8,3 +8,4 @@ Zabbix monitoring for the following Ubiquiti devices:
 
 ## Installation:
 1. Copy edgepower_trapper to `/usr/lib/zabbix/externalscripts/` or your appropriate external scripts directory.
+2. Import the template (it is under the name "Ubiquiti EdgePower Web" so make sure no other template exists with that name).
