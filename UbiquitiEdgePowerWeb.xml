@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.4</version>
+    <template_groups>
+        <template_group>
+            <uuid>36bff6c29af64692839d077febfc7079</uuid>
+            <name>Templates/Network devices</name>
+        </template_group>
+        <template_group>
+            <uuid>3dcd5bbe90534f9e8eb5c2d53756af63</uuid>
+            <name>Templates/Power</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>33574e4f44fa48a7be8244f66becd12b</uuid>
+            <template>Ubiquiti EdgePower Web</template>
+            <name>Ubiquiti EdgePower Web</name>
+            <groups>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+                <group>
+                    <name>Templates/Power</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>7caea4ccabe24a02acce7ef2b5853b3e</uuid>
+                    <name>External Script</name>
+                    <type>EXTERNAL</type>
+                    <key>edgepower_trapper.py[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;{$UBNT_USERNAME}&quot;,&quot;{$UBNT_PASSWORD}&quot;]</key>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <status>DISABLED</status>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <uuid>8344d74f7d3b4ce688d8bc7e4e628ad0</uuid>
+                    <name>State</name>
+                    <type>TRAP</type>
+                    <key>state</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                </item>
+            </items>
+            <macros>
+                <macro>
+                    <macro>{$UBNT_PASSWORD}</macro>
+                    <type>SECRET_TEXT</type>
+                    <description>Default password</description>
+                </macro>
+                <macro>
+                    <macro>{$UBNT_USERNAME}</macro>
+                    <value>ubnt</value>
+                    <description>Default username</description>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+</zabbix_export>
